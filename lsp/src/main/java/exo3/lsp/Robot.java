@@ -1,6 +1,6 @@
 package exo3.lsp;
 
-import java.util.List;
+import java.util.*;
 
 public class Robot {
 	
@@ -15,7 +15,7 @@ public class Robot {
 	public void tourne() { /*tourne d’1/ 4 de tour */ }
     public void avance() { /* avance d’une case */ }
    
-    List<Robot> robots;
+    private ArrayList<Robot> robots=new ArrayList<Robot>();
     
     public void avancer_tous(){
     	
