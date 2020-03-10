@@ -2,8 +2,20 @@ package exo3.lsp;
 
 public class RobotStatique {
 	
-    private Position position;
-    public RobotStatique(Position position) {
+	protected Position position;
+	protected Direction direction;
+	
+	public RobotStatique(Position position,Direction direction) {
 		this.position=position;
-    }
+		this.direction=direction;
+	}
+    
+    public Direction getDirection() {
+		return this.direction;
+	}
+	
+	public Position getPosition() {
+		return this.position;
+	}
+
 }

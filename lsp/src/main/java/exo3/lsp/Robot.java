@@ -2,18 +2,41 @@ package exo3.lsp;
 
 import java.util.*;
 
-public class Robot {
-	
-	private Position position;
-	private Direction direction;
+public class Robot extends RobotStatique{
 	
 	public Robot(Position position,Direction direction) {
-		this.position=position;
-		this.direction=direction;
+		super(position,direction);
 	}
 
-	public void tourne() { /*tourne d’1/ 4 de tour */ }
-    public void avance() { /* avance d’une case */ }
+	public void tourne() {
+		if(direction.equals(Direction.NORD)) {
+			this.direction=Direction.EST;
+		}
+		else if(direction.equals(Direction.EST)) {
+			this.direction=Direction.SUD;
+		}
+		else if(direction.equals(Direction.SUD)) {
+			this.direction=Direction.OUEST;
+		}
+		else {
+			this.direction=Direction.NORD;
+		}
+	}
+	
+	public void avance(){
+		if(direction.equals(Direction.NORD)) {
+			this.position.deplaceY(1);
+		}
+		else if(direction.equals(Direction.EST)) {
+			this.position.deplaceX(1);
+		}
+		else if(direction.equals(Direction.SUD)) {
+			this.position.deplaceY(-1);
+		}
+		else {
+			this.position.deplaceX(-1);
+		}
+	}
    
     private ArrayList<Robot> robots=new ArrayList<Robot>();
     
