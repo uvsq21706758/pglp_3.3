@@ -1,38 +1,31 @@
 package exo3.lsp;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import static org.junit.Assert.*;
+
+import org.junit.Test;
 
 /**
  * Unit test for simple App.
  */
-public class Testes 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public Testes( String testName )
-    {
-        super( testName );
-    }
-
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( Testes.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+public class Testes {
+	
+	Robot robot;
+	Position pos;
+	Direction dir;
+	@Test
+	public void testNotNull() {
+		pos=new Position(2,3);
+		dir=new Direction(5,7);
+		robot = new Robot(pos,dir);
+		assertNotNull(robot);
+	}
+	
+	@Test 
+	public void test_avancetous() {
+		pos=new Position(2,3);
+		dir=new Direction(5,7);
+		robot = new Robot(pos,dir);
+		robot.avancer_tous();
+	}
+  
 }
