@@ -40,6 +40,9 @@ public class Robot extends RobotStatique{
    
     private ArrayList<Robot> robots=new ArrayList<Robot>();
     
+    public void Ajou_robot(Robot r) {
+		this.robots.add(r);
+	}
     public void avancer_tous(){
     	
      for (Robot r : robots) {
